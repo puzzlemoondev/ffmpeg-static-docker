@@ -17,5 +17,5 @@ COPY --from=puzzlemoondev/ffmpeg-static /ffmpeg /usr/local/bin/
 ### Run directly
 
 ```sh
-docker run -i --rm -u $UID:$GROUPS -v "$PWD:$PWD" -w "$PWD" puzzlemoondev/ffmpeg-static -i file.wav file.mp3
+docker run -i --rm -u "$UID:$GROUPS" -v "$PWD:$PWD" -w "$PWD" puzzlemoondev/ffmpeg-static -i file.wav file.mp3
 ```
