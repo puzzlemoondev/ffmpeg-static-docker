@@ -1,4 +1,5 @@
-FROM node AS ffmpeg-static
+FROM alpine AS ffmpeg-static
+RUN apk add --upgrade --no-cache nodejs npm
 WORKDIR /build
 COPY . .
 RUN npm install && \
