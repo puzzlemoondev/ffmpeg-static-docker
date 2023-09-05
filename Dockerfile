@@ -3,7 +3,6 @@ RUN apk add --upgrade --no-cache nodejs npm
 WORKDIR /build
 COPY . .
 RUN npm ci && \
-    echo "console.log(require('ffmpeg-static'))" > ffmpeg-static.js && \
     cp "$(node ffmpeg-static.js)" /ffmpeg
 
 FROM scratch
