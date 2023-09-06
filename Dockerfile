@@ -3,7 +3,7 @@ RUN apk add --upgrade --no-cache nodejs npm
 WORKDIR /build
 COPY . .
 RUN npm ci && \
-    node index.js
+    ./index.js /ffmpeg
 
 FROM scratch
 COPY --from=ffmpeg-static /ffmpeg /
